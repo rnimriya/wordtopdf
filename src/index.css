@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary-500 selection:text-white;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(244, 63, 94, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-slate-950;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white border border-slate-200/80 rounded-2xl shadow-sm shadow-slate-100/50;
+  }
+  
+  .glass-input {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+  }
+  
+  .glass-button-primary {
+    @apply px-6 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 shadow-md shadow-primary-500/15 hover:shadow-primary-500/25 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 disabled:shadow-none;
+  }
+
+  .glass-button-secondary {
+    @apply px-6 py-3 rounded-xl font-medium text-slate-700 border border-slate-200 bg-white hover:bg-slate-550/5 hover:text-slate-900 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+  
+  .glow-indigo {
+    box-shadow: 0 0 40px -10px rgba(220, 38, 38, 0.25);
+  }
+  
+  .glow-emerald {
+    box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.2);
+  }
+
+  /* Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+  }
+}
+
+/* SEO Prose and Page Contrast Overrides for Light Mode */
+.prose-invert {
+  color: #475569 !important;
+}
+.prose-invert h1, .prose-invert h2, .prose-invert h3, .prose-invert h4, .prose-invert h5, .prose-invert h6 {
+  color: #0f172a !important;
+}
+.prose-invert p, .prose-invert li {
+  color: #475569 !important;
+}
+.prose-invert strong {
+  color: #0f172a !important;
+}
+
+/* Utility layout blocks that used dark colors */
+.bg-slate-950\/60, .bg-slate-950\/20, .bg-slate-900\/20 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+.bg-slate-950\/80 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+.text-slate-350, .text-slate-300 {
+  color: #475569 !important;
+}
+.text-slate-400 {
+  color: #64748b !important;
+}
+.border-slate-800, .border-slate-850 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Light Mode Workspace Contrast Overrides */
+.glass-card h3.text-white, 
+.glass-card h4.text-white, 
+.glass-card span.text-white,
+.glass-card div.text-white,
+.glass-card button.text-slate-400 {
+  color: #0f172a !important;
+}
+.glass-card .text-white:not(.glass-button-primary):not(.bg-gradient-to-tr) {
+  color: #0f172a !important;
+}
+.glass-card .bg-slate-950\/40, 
+.glass-card .bg-slate-950\/20, 
+.glass-card .bg-slate-900\/20, 
+.glass-card .bg-slate-950 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+.glass-card .border-slate-850, 
+.glass-card .border-slate-800,
+.glass-card .border-slate-700 {
+  border-color: #e2e8f0 !important;
+}
+.glass-card .text-slate-400, 
+.glass-card .text-slate-500, 
+.glass-card .text-slate-300 {
+  color: #475569 !important;
+}
+.glass-card .hover\:text-white:hover {
+  color: #dc2626 !important;
+}
+.glass-card .hover\:bg-slate-900\/50:hover {
+  background-color: #f1f5f9 !important;
+}
+.glass-card .border-dashed {
+  border-color: #cbd5e1 !important;
+}
+
