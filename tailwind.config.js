@@ -44,8 +44,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Poppins', 'Inter', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
+        sans: ['"Google Sans Flex"', 'Poppins', 'Inter', 'sans-serif'],
+        display: ['"Google Sans Flex"', 'Outfit', 'sans-serif'],
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
