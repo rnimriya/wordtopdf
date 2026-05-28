@@ -7,9 +7,6 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-        main: 'src/index.html',
-      },
       onwarn(warning, warn) {
         if (warning.code === 'EVAL' && warning.id && warning.id.includes('pdfjs-dist')) {
           return;
