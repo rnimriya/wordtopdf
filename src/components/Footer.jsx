@@ -14,7 +14,7 @@ function Footer() {
               <Cpu className="h-5 w-5" />
             </div>
             <span className="font-display font-bold text-base text-slate-900">
-              91PDF<span className="text-primary-500">Converter</span>
+              Word To PDF <span className="text-primary-500">Convertor</span>
             </span>
           </div>
           <p className="text-[11px] leading-relaxed">

@@ -113,7 +113,7 @@ function Navbar() {
               <Cpu className="h-5 w-5 text-white" />
             </div>
             <span className="font-display font-bold text-lg tracking-tight text-slate-900 group-hover:text-primary-500 transition-colors">
-              91PDF<span className="text-primary-500">Converter</span>
+              Word To PDF <span className="text-primary-500">Convertor</span>
             </span>
           </Link>
 
