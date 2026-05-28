@@ -128,7 +128,7 @@ function App() {
                 <Route path="/convert/pdf-to-excel" element={<PdfToExcel />} />
                 <Route path="/convert/pdf-to-jpg" element={<PdfToJpg />} />
                 <Route path="/convert/pdf-to-png" element={<PdfToPng />} />
-                <Route path="/convert/pdf-to-ppt" element={<PdfToPpt />} />
+                <Route path="/pdf-to-ppt" element={<PdfToPpt />} />
                 
                 {/* Convert to PDF */}
                 <Route path="/convert/word-to-pdf" element={<WordToPdf />} />

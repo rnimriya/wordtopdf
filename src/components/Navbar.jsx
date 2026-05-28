@@ -44,7 +44,7 @@ function Navbar() {
       links: [
         { name: 'PDF to Word', path: '/convert/pdf-to-word', iconText: 'DOC', iconBg: 'bg-blue-50 text-blue-600 border border-blue-100' },
         { name: 'PDF to Excel', path: '/convert/pdf-to-excel', iconText: 'XLS', iconBg: 'bg-emerald-50 text-emerald-600 border border-emerald-100' },
-        { name: 'PDF to PPT', path: '/convert/pdf-to-ppt', iconText: 'PPT', iconBg: 'bg-orange-50 text-orange-600 border border-orange-100' },
+        { name: 'PDF to PPT', path: '/pdf-to-ppt', iconText: 'PPT', iconBg: 'bg-orange-50 text-orange-600 border border-orange-100' },
         { name: 'PDF to JPG', path: '/convert/pdf-to-jpg', iconText: 'JPG', iconBg: 'bg-rose-50 text-rose-600 border border-rose-100' },
         { name: 'PDF to PNG', path: '/convert/pdf-to-png', iconText: 'PNG', iconBg: 'bg-pink-50 text-pink-600 border border-pink-100' },
         { name: 'Extract Images', path: '/extract-images', iconText: 'IMG', iconBg: 'bg-purple-50 text-purple-600 border border-purple-100' },

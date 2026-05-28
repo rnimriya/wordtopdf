@@ -25,7 +25,7 @@ const Sitemap = () => {
         { path: '/convert/pdf-to-excel', label: 'PDF to Excel' },
         { path: '/convert/pdf-to-jpg', label: 'PDF to JPG' },
         { path: '/convert/pdf-to-png', label: 'PDF to PNG' },
-        { path: '/convert/pdf-to-ppt', label: 'PDF to PPT' },
+        { path: '/pdf-to-ppt', label: 'PDF to PPT' },
         { path: '/convert/pdf-to-pdfa', label: 'PDF to PDF/A' },
       ],
     },

@@ -351,7 +351,7 @@ function Home() {
     {
       name: 'PDF to PPT',
       description: 'Convert PDF document pages into editable slides.',
-      path: '/convert/pdf-to-ppt',
+      path: '/pdf-to-ppt',
       icon: ArrowRightLeft,
       category: 'from-pdf',
       color: 'from-rose-500 to-orange-600'

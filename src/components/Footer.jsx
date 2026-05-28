@@ -51,7 +51,7 @@ function Footer() {
           <ul className="space-y-1 text-xs">
             <li><Link to="/convert/pdf-to-word" className="hover:text-primary-600 transition-colors">PDF to Word</Link></li>
             <li><Link to="/convert/pdf-to-excel" className="hover:text-primary-600 transition-colors">PDF to Excel</Link></li>
-            <li><Link to="/convert/pdf-to-ppt" className="hover:text-primary-600 transition-colors">PDF to PPT</Link></li>
+            <li><Link to="/pdf-to-ppt" className="hover:text-primary-600 transition-colors">PDF to PPT</Link></li>
             <li><Link to="/convert/pdf-to-jpg" className="hover:text-primary-600 transition-colors">PDF to JPG</Link></li>
             <li><Link to="/convert/pdf-to-png" className="hover:text-primary-600 transition-colors">PDF to PNG</Link></li>
             <li><Link to="/extract-images" className="hover:text-primary-600 transition-colors">Extract Images</Link></li>
