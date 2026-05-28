@@ -14,7 +14,7 @@ function SharePDF() {
         setIsExecuting(true);
         setTimeout(() => {
           setIsExecuting(false);
-          setSuccessMessage("Secure link generated: https://91pdfconverter.com/share/" + Math.random().toString(36).substring(8));
+          setSuccessMessage("Secure link generated: https://wordtopdfconvertor.in/share/" + Math.random().toString(36).substring(8));
         }, 1200);
       };
 

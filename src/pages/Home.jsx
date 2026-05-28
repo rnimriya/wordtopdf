@@ -534,7 +534,7 @@ function Home() {
             Conventional PDF conversion websites require uploading your confidential PDFs, documents, invoices, or legal contracts to their servers. This presents critical data leakage risks.
           </p>
           <p className="text-sm text-slate-650 leading-relaxed">
-            <strong>91PDFConverter</strong> executes operations directly inside your web browser. Utilizing modern WebAssembly compiled libraries, documents are processed directly inside your local memory buffer.
+            <strong>WordToPDFConvertor</strong> executes operations directly inside your web browser. Utilizing modern WebAssembly compiled libraries, documents are processed directly inside your local memory buffer.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

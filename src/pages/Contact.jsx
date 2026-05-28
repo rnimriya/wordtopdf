@@ -57,8 +57,8 @@ function Contact() {
               <Mail className="h-5 w-5 text-primary-500 shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-semibold text-sm text-white">Email Address</h4>
-                <a href="mailto:contact@91pdfconverter.com" className="text-xs text-slate-400 hover:text-white transition-colors">
-                  contact@91pdfconverter.com
+                <a href="mailto:contact@wordtopdfconvertor.in" className="text-xs text-slate-400 hover:text-white transition-colors">
+                  contact@wordtopdfconvertor.in
                 </a>
               </div>
             </div>

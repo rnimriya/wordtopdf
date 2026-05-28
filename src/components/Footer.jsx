@@ -122,7 +122,7 @@ function Footer() {
           <Link to="/sitemap" className="hover:text-primary-600 transition-colors font-medium">Sitemap</Link>
           <a href="/blog" className="hover:text-primary-600 transition-colors font-medium">Blog</a>
         </div>
-        <p>&copy; {new Date().getFullYear()} 91PDFConverter. All rights reserved. Built client-side for absolute privacy.</p>
+        <p>&copy; {new Date().getFullYear()} WordToPDFConvertor. All rights reserved. Built client-side for absolute privacy.</p>
       </div>
     </footer>
   );

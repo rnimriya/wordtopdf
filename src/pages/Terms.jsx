@@ -32,7 +32,7 @@ function Terms() {
           <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to PDF Converter.</li>
           <li><strong>Country</strong> refers to: New York, United States.</li>
           <li><strong>Service</strong> refers to the Website.</li>
-          <li><strong>Website</strong> refers to 91PDFConverter, accessible from <a href="https://91pdfconverter.com" className="text-primary-400 hover:underline">https://91pdfconverter.com</a>.</li>
+          <li><strong>Website</strong> refers to WordToPDFConvertor, accessible from <a href="https://wordtopdfconvertor.in" className="text-primary-400 hover:underline">https://wordtopdfconvertor.in</a>.</li>
           <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service.</li>
         </ul>
 
@@ -57,7 +57,7 @@ function Terms() {
           If you have any questions about these Terms and Conditions, You can contact us:
         </p>
         <ul className="list-disc pl-6">
-          <li>By email: <a href="mailto:contact@91pdfconverter.com" className="text-primary-400 hover:underline">contact@91pdfconverter.com</a></li>
+          <li>By email: <a href="mailto:contact@wordtopdfconvertor.in" className="text-primary-400 hover:underline">contact@wordtopdfconvertor.in</a></li>
         </ul>
       </div>
 
