@@ -75,6 +75,7 @@ const About = React.lazy(() => import('./pages/About.jsx'));
 const Contact = React.lazy(() => import('./pages/Contact.jsx'));
 const Privacy = React.lazy(() => import('./pages/Privacy.jsx'));
 const Terms = React.lazy(() => import('./pages/Terms.jsx'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap.jsx'));
 const NotFound = React.lazy(() => import('./pages/NotFound.jsx'));
 
 function App() {
@@ -156,6 +157,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/sitemap" element={<Sitemap />} />
                 
                 {/* 404 Catch-All */}
                 <Route path="*" element={<NotFound />} />
