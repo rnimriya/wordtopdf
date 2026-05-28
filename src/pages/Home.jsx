@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 function Home() {
-  const [filter, setFilter] = useState('all');
+  // Removed unused filter state
 
   const tools = [
     // AI PDF
@@ -418,10 +418,6 @@ function Home() {
     }
   ];
 
-  const filteredTools = filter === 'all' 
-    ? tools 
-    : tools.filter(t => t.category === filter);
-
   return (
     <div className="space-y-8">
       
@@ -454,75 +450,75 @@ function Home() {
         </div>
       </section>
 
-      {/* Grid Filters */}
-      <section className="space-y-4">
-        <div className="flex flex-wrap justify-center gap-2 border-b border-slate-150 pb-3">
-          {[
-            { id: 'all', name: 'All Tools' },
-            { id: 'ai', name: 'AI PDF' },
-            { id: 'to-pdf', name: 'Convert to PDF' },
-            { id: 'from-pdf', name: 'Convert from PDF' },
-            { id: 'organize', name: 'Organize & Utility' },
-            { id: 'edit', name: 'View & Edit' },
-          ].map(cat => (
-            <button
-              key={cat.id}
-              onClick={() => setFilter(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs font-bold tracking-wide transition-all ${
-                filter === cat.id 
-                  ? 'bg-primary-600 text-white shadow-md shadow-primary-500/15' 
-                  : 'text-slate-600 hover:text-slate-900 border border-slate-200 hover:bg-slate-100/50'
-              }`}
-            >
-              {cat.name}
-            </button>
-          ))}
-        </div>
-
-        {/* Dashboard Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-in fade-in duration-300">
-          {filteredTools.map((tool) => {
-            const IconComponent = tool.icon;
-            return (
-              <Link
-                key={tool.name}
-                to={tool.path}
-                className="group relative flex flex-col justify-between p-5 rounded-xl border border-slate-200 bg-white hover:border-primary-400 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 hover:-translate-y-1 shadow-sm"
-              >
+      {/* Tool Categories Carousel Layout */}
+      <div className="space-y-12 pb-8">
+        {[
+          { id: 'ai', title: 'AI PDF Tools', desc: 'Smart document analysis and generation' },
+          { id: 'to-pdf', title: 'Convert to PDF', desc: 'Turn files, images, and documents into PDFs' },
+          { id: 'from-pdf', title: 'Convert from PDF', desc: 'Extract PDFs into editable office formats' },
+          { id: 'organize', title: 'Organize & Utility', desc: 'Merge, split, and manipulate PDF pages' },
+          { id: 'edit', title: 'View & Edit', desc: 'Annotate, sign, secure, and modify PDFs' },
+        ].map(category => {
+          const categoryTools = tools.filter(t => t.category === category.id);
+          
+          return (
+            <section key={category.id} className="space-y-4 animate-in fade-in duration-500">
+              <div className="flex items-end justify-between px-1">
                 <div>
-                  <div className="flex items-start justify-between">
-                    <div className={`p-2.5 rounded-lg bg-gradient-to-tr ${tool.color} text-white shadow-lg`}>
-                      <IconComponent className="h-4.5 w-4.5" />
-                    </div>
-                    {tool.badge && (
-                      <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
-                        tool.badge === 'Security' 
-                          ? 'bg-rose-50 text-rose-700 border border-rose-150' 
-                          : 'bg-primary-50 text-primary-750 border border-primary-100'
-                      }`}>
-                        {tool.badge}
-                      </span>
-                    )}
-                  </div>
-
-                  <h3 className="font-display font-bold text-sm text-slate-900 mt-3 group-hover:text-primary-600 transition-colors">
-                    {tool.name}
-                  </h3>
-                  
-                  <p className="text-[11px] text-slate-600 mt-1.5 leading-relaxed">
-                    {tool.description}
-                  </p>
+                  <h2 className="text-xl md:text-2xl font-bold font-display text-slate-900 tracking-tight">
+                    {category.title}
+                  </h2>
+                  <p className="text-sm text-slate-500 mt-1">{category.desc}</p>
                 </div>
+              </div>
+              
+              {/* Horizontal Scroll Container */}
+              <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 md:mx-0 md:px-1">
+                {categoryTools.map(tool => {
+                  const IconComponent = tool.icon;
+                  return (
+                    <Link
+                      key={tool.name}
+                      to={tool.path}
+                      className="group relative flex flex-col justify-between p-5 rounded-xl border border-slate-200 bg-white hover:border-primary-400 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 hover:-translate-y-1 shadow-sm shrink-0 w-[280px] md:w-[320px] snap-start"
+                    >
+                      <div>
+                        <div className="flex items-start justify-between">
+                          <div className={`p-2.5 rounded-lg bg-gradient-to-tr ${tool.color} text-white shadow-lg`}>
+                            <IconComponent className="h-5 w-5" />
+                          </div>
+                          {tool.badge && (
+                            <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
+                              tool.badge === 'Security' 
+                                ? 'bg-rose-50 text-rose-700 border border-rose-150' 
+                                : 'bg-primary-50 text-primary-750 border border-primary-100'
+                            }`}>
+                              {tool.badge}
+                            </span>
+                          )}
+                        </div>
 
-                <div className="mt-3.5 flex items-center text-xs font-bold text-primary-600 group-hover:text-primary-700 group-hover:translate-x-1.5 transition-all duration-300">
-                  <span>Open Tool</span>
-                  <span className="ml-1">&rarr;</span>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
+                        <h3 className="font-display font-bold text-base text-slate-900 mt-4 group-hover:text-primary-600 transition-colors">
+                          {tool.name}
+                        </h3>
+                        
+                        <p className="text-xs text-slate-600 mt-2 leading-relaxed line-clamp-2">
+                          {tool.description}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 flex items-center text-xs font-bold text-primary-600 group-hover:text-primary-700 group-hover:translate-x-1.5 transition-all duration-300">
+                        <span>Open Tool</span>
+                        <span className="ml-1">&rarr;</span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })}
+      </div>
 
       {/* Trust Copywriter Block */}
       <section className="glass-card p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
