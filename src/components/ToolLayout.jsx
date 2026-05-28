@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ShieldCheck, FileText, ArrowLeft, RefreshCw, Loader2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Dropzone from './Dropzone.jsx';
 
 function ToolLayout({
@@ -924,7 +924,7 @@ function ToolLayout({
           {relatedTools.map((tool, idx) => (
             <Link 
               key={idx}
-              to={tool.link}
+              href={tool.link}
               className="flex items-center justify-between p-4 rounded-xl border border-slate-150 bg-slate-50/50 hover:bg-red-50 hover:border-red-200 transition-all group"
             >
               <div className="space-y-1">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Cpu, ShieldCheck } from 'lucide-react';
 
 function Footer() {
@@ -30,18 +30,18 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-slate-900 mb-2 text-[11px] uppercase tracking-wider">Convert to PDF</h4>
           <ul className="space-y-1 text-xs">
-            <li><Link to="/word-to-pdf" className="hover:text-primary-600 transition-colors">Word to PDF</Link></li>
-            <li><Link to="/excel-to-pdf" className="hover:text-primary-600 transition-colors">Excel to PDF</Link></li>
-            <li><Link to="/ppt-to-pdf" className="hover:text-primary-600 transition-colors">PPT to PDF</Link></li>
-            <li><Link to="/jpg-to-pdf" className="hover:text-primary-600 transition-colors">JPG to PDF</Link></li>
-            <li><Link to="/autocad-to-pdf" className="hover:text-primary-600 transition-colors">AutoCAD to PDF</Link></li>
-            <li><Link to="/openoffice-to-pdf" className="hover:text-primary-600 transition-colors">OpenOffice to PDF</Link></li>
-            <li><Link to="/ebooks-to-pdf" className="hover:text-primary-600 transition-colors">eBooks to PDF</Link></li>
-            <li><Link to="/iwork-to-pdf" className="hover:text-primary-600 transition-colors">iWork to PDF</Link></li>
-            <li><Link to="/html-to-pdf" className="hover:text-primary-600 transition-colors">HTML to PDF</Link></li>
-            <li><Link to="/text-to-pdf" className="hover:text-primary-600 transition-colors">Text to PDF</Link></li>
-            <li><Link to="/rtf-to-pdf" className="hover:text-primary-600 transition-colors">RTF to PDF</Link></li>
-            <li><Link to="/odt-to-pdf" className="hover:text-primary-600 transition-colors">ODT to PDF</Link></li>
+            <li><Link href="/word-to-pdf" className="hover:text-primary-600 transition-colors">Word to PDF</Link></li>
+            <li><Link href="/excel-to-pdf" className="hover:text-primary-600 transition-colors">Excel to PDF</Link></li>
+            <li><Link href="/ppt-to-pdf" className="hover:text-primary-600 transition-colors">PPT to PDF</Link></li>
+            <li><Link href="/jpg-to-pdf" className="hover:text-primary-600 transition-colors">JPG to PDF</Link></li>
+            <li><Link href="/autocad-to-pdf" className="hover:text-primary-600 transition-colors">AutoCAD to PDF</Link></li>
+            <li><Link href="/openoffice-to-pdf" className="hover:text-primary-600 transition-colors">OpenOffice to PDF</Link></li>
+            <li><Link href="/ebooks-to-pdf" className="hover:text-primary-600 transition-colors">eBooks to PDF</Link></li>
+            <li><Link href="/iwork-to-pdf" className="hover:text-primary-600 transition-colors">iWork to PDF</Link></li>
+            <li><Link href="/html-to-pdf" className="hover:text-primary-600 transition-colors">HTML to PDF</Link></li>
+            <li><Link href="/text-to-pdf" className="hover:text-primary-600 transition-colors">Text to PDF</Link></li>
+            <li><Link href="/rtf-to-pdf" className="hover:text-primary-600 transition-colors">RTF to PDF</Link></li>
+            <li><Link href="/odt-to-pdf" className="hover:text-primary-600 transition-colors">ODT to PDF</Link></li>
           </ul>
         </div>
 
@@ -49,15 +49,15 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-slate-900 mb-2 text-[11px] uppercase tracking-wider">Convert From</h4>
           <ul className="space-y-1 text-xs">
-            <li><Link to="/pdf-to-word" className="hover:text-primary-600 transition-colors">PDF to Word</Link></li>
-            <li><Link to="/pdf-to-excel" className="hover:text-primary-600 transition-colors">PDF to Excel</Link></li>
-            <li><Link to="/pdf-to-ppt" className="hover:text-primary-600 transition-colors">PDF to PPT</Link></li>
-            <li><Link to="/pdf-to-jpg" className="hover:text-primary-600 transition-colors">PDF to JPG</Link></li>
-            <li><Link to="/pdf-to-png" className="hover:text-primary-600 transition-colors">PDF to PNG</Link></li>
-            <li><Link to="/extract-images" className="hover:text-primary-600 transition-colors">Extract Images</Link></li>
-            <li><Link to="/pdf-to-pdfa" className="hover:text-primary-600 transition-colors">PDF to PDF/A</Link></li>
-            <li><Link to="/pdf-scanner" className="hover:text-primary-600 transition-colors">PDF Scanner</Link></li>
-            <li><Link to="/ocr-pdf" className="hover:text-primary-600 transition-colors">PDF OCR</Link></li>
+            <li><Link href="/pdf-to-word" className="hover:text-primary-600 transition-colors">PDF to Word</Link></li>
+            <li><Link href="/pdf-to-excel" className="hover:text-primary-600 transition-colors">PDF to Excel</Link></li>
+            <li><Link href="/pdf-to-ppt" className="hover:text-primary-600 transition-colors">PDF to PPT</Link></li>
+            <li><Link href="/pdf-to-jpg" className="hover:text-primary-600 transition-colors">PDF to JPG</Link></li>
+            <li><Link href="/pdf-to-png" className="hover:text-primary-600 transition-colors">PDF to PNG</Link></li>
+            <li><Link href="/extract-images" className="hover:text-primary-600 transition-colors">Extract Images</Link></li>
+            <li><Link href="/pdf-to-pdfa" className="hover:text-primary-600 transition-colors">PDF to PDF/A</Link></li>
+            <li><Link href="/pdf-scanner" className="hover:text-primary-600 transition-colors">PDF Scanner</Link></li>
+            <li><Link href="/ocr-pdf" className="hover:text-primary-600 transition-colors">PDF OCR</Link></li>
           </ul>
         </div>
 
@@ -65,14 +65,14 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-slate-900 mb-2 text-[11px] uppercase tracking-wider">Organize & Page</h4>
           <ul className="space-y-1 text-xs">
-            <li><Link to="/merge-pdf" className="hover:text-primary-600 transition-colors">Merge PDF</Link></li>
-            <li><Link to="/split-pdf" className="hover:text-primary-600 transition-colors">Split PDF</Link></li>
-            <li><Link to="/organize-pdf" className="hover:text-primary-600 transition-colors">Organize PDF</Link></li>
-            <li><Link to="/delete-pdf-pages" className="hover:text-primary-600 transition-colors">Delete PDF Pages</Link></li>
-            <li><Link to="/extract-pdf-pages" className="hover:text-primary-600 transition-colors">Extract PDF Pages</Link></li>
-            <li><Link to="/rotate-pdf" className="hover:text-primary-600 transition-colors">Rotate PDF</Link></li>
-            <li><Link to="/number-pages" className="hover:text-primary-600 transition-colors">Number Pages</Link></li>
-            <li><Link to="/crop-pdf" className="hover:text-primary-600 transition-colors">Crop PDF</Link></li>
+            <li><Link href="/merge-pdf" className="hover:text-primary-600 transition-colors">Merge PDF</Link></li>
+            <li><Link href="/split-pdf" className="hover:text-primary-600 transition-colors">Split PDF</Link></li>
+            <li><Link href="/organize-pdf" className="hover:text-primary-600 transition-colors">Organize PDF</Link></li>
+            <li><Link href="/delete-pdf-pages" className="hover:text-primary-600 transition-colors">Delete PDF Pages</Link></li>
+            <li><Link href="/extract-pdf-pages" className="hover:text-primary-600 transition-colors">Extract PDF Pages</Link></li>
+            <li><Link href="/rotate-pdf" className="hover:text-primary-600 transition-colors">Rotate PDF</Link></li>
+            <li><Link href="/number-pages" className="hover:text-primary-600 transition-colors">Number Pages</Link></li>
+            <li><Link href="/crop-pdf" className="hover:text-primary-600 transition-colors">Crop PDF</Link></li>
           </ul>
         </div>
 
@@ -80,14 +80,14 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-slate-900 mb-2 text-[11px] uppercase tracking-wider">Security & Sign</h4>
           <ul className="space-y-1 text-xs">
-            <li><Link to="/protect-pdf" className="hover:text-primary-600 transition-colors">Protect PDF</Link></li>
-            <li><Link to="/unlock-pdf" className="hover:text-primary-600 transition-colors">Unlock PDF</Link></li>
-            <li><Link to="/redact-pdf" className="hover:text-primary-600 transition-colors">Redact PDF</Link></li>
-            <li><Link to="/watermark-pdf" className="hover:text-primary-600 transition-colors">Watermark PDF</Link></li>
-            <li><Link to="/sign-pdf" className="hover:text-primary-600 transition-colors">Sign PDF</Link></li>
-            <li><Link to="/request-signatures" className="hover:text-primary-600 transition-colors">Request Signatures</Link></li>
-            <li><Link to="/pdf-form-filler" className="hover:text-primary-600 transition-colors">PDF Form Filler</Link></li>
-            <li><Link to="/share-pdf" className="hover:text-primary-600 transition-colors">Share PDF</Link></li>
+            <li><Link href="/protect-pdf" className="hover:text-primary-600 transition-colors">Protect PDF</Link></li>
+            <li><Link href="/unlock-pdf" className="hover:text-primary-600 transition-colors">Unlock PDF</Link></li>
+            <li><Link href="/redact-pdf" className="hover:text-primary-600 transition-colors">Redact PDF</Link></li>
+            <li><Link href="/watermark-pdf" className="hover:text-primary-600 transition-colors">Watermark PDF</Link></li>
+            <li><Link href="/sign-pdf" className="hover:text-primary-600 transition-colors">Sign PDF</Link></li>
+            <li><Link href="/request-signatures" className="hover:text-primary-600 transition-colors">Request Signatures</Link></li>
+            <li><Link href="/pdf-form-filler" className="hover:text-primary-600 transition-colors">PDF Form Filler</Link></li>
+            <li><Link href="/share-pdf" className="hover:text-primary-600 transition-colors">Share PDF</Link></li>
           </ul>
         </div>
 
@@ -95,19 +95,19 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-slate-900 mb-2 text-[11px] uppercase tracking-wider">Tools & AI</h4>
           <ul className="space-y-1 text-xs">
-            <li><Link to="/pdf-converter" className="hover:text-primary-600 transition-colors">PDF Converter</Link></li>
-            <li><Link to="/compress-pdf" className="hover:text-primary-600 transition-colors">Compress PDF</Link></li>
-            <li><Link to="/flatten-pdf" className="hover:text-primary-600 transition-colors">Flatten PDF</Link></li>
-            <li><Link to="/repair-pdf" className="hover:text-primary-600 transition-colors">Repair PDF</Link></li>
-            <li><Link to="/print-ready-pdf" className="hover:text-primary-600 transition-colors">Print-Ready PDF</Link></li>
-            <li><Link to="/edit-pdf" className="hover:text-primary-600 transition-colors">Edit PDF</Link></li>
-            <li><Link to="/pdf-annotator" className="hover:text-primary-600 transition-colors">PDF Annotator</Link></li>
-            <li><Link to="/pdf-reader" className="hover:text-primary-600 transition-colors">PDF Reader</Link></li>
-            <li><Link to="/ai-pdf-assistant" className="hover:text-primary-600 transition-colors">AI PDF Assistant</Link></li>
-            <li><Link to="/chat-with-pdf" className="hover:text-primary-600 transition-colors">Chat with PDF</Link></li>
-            <li><Link to="/ai-pdf-summarizer" className="hover:text-primary-600 transition-colors">AI PDF Summarizer</Link></li>
-            <li><Link to="/translate-pdf" className="hover:text-primary-600 transition-colors">Translate PDF</Link></li>
-            <li><Link to="/ai-question-generator" className="hover:text-primary-600 transition-colors">AI Question Gen</Link></li>
+            <li><Link href="/pdf-converter" className="hover:text-primary-600 transition-colors">PDF Converter</Link></li>
+            <li><Link href="/compress-pdf" className="hover:text-primary-600 transition-colors">Compress PDF</Link></li>
+            <li><Link href="/flatten-pdf" className="hover:text-primary-600 transition-colors">Flatten PDF</Link></li>
+            <li><Link href="/repair-pdf" className="hover:text-primary-600 transition-colors">Repair PDF</Link></li>
+            <li><Link href="/print-ready-pdf" className="hover:text-primary-600 transition-colors">Print-Ready PDF</Link></li>
+            <li><Link href="/edit-pdf" className="hover:text-primary-600 transition-colors">Edit PDF</Link></li>
+            <li><Link href="/pdf-annotator" className="hover:text-primary-600 transition-colors">PDF Annotator</Link></li>
+            <li><Link href="/pdf-reader" className="hover:text-primary-600 transition-colors">PDF Reader</Link></li>
+            <li><Link href="/ai-pdf-assistant" className="hover:text-primary-600 transition-colors">AI PDF Assistant</Link></li>
+            <li><Link href="/chat-with-pdf" className="hover:text-primary-600 transition-colors">Chat with PDF</Link></li>
+            <li><Link href="/ai-pdf-summarizer" className="hover:text-primary-600 transition-colors">AI PDF Summarizer</Link></li>
+            <li><Link href="/translate-pdf" className="hover:text-primary-600 transition-colors">Translate PDF</Link></li>
+            <li><Link href="/ai-question-generator" className="hover:text-primary-600 transition-colors">AI Question Gen</Link></li>
           </ul>
         </div>
 
@@ -115,11 +115,11 @@ function Footer() {
 
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0">
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-          <Link to="/about" className="hover:text-primary-600 transition-colors font-medium">About Us</Link>
-          <Link to="/contact" className="hover:text-primary-600 transition-colors font-medium">Contact</Link>
-          <Link to="/privacy" className="hover:text-primary-600 transition-colors font-medium">Privacy Policy</Link>
-          <Link to="/terms" className="hover:text-primary-600 transition-colors font-medium">Terms of Service</Link>
-          <Link to="/sitemap" className="hover:text-primary-600 transition-colors font-medium">Sitemap</Link>
+          <Link href="/about" className="hover:text-primary-600 transition-colors font-medium">About Us</Link>
+          <Link href="/contact" className="hover:text-primary-600 transition-colors font-medium">Contact</Link>
+          <Link href="/privacy" className="hover:text-primary-600 transition-colors font-medium">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-primary-600 transition-colors font-medium">Terms of Service</Link>
+          <Link href="/sitemap" className="hover:text-primary-600 transition-colors font-medium">Sitemap</Link>
           <a href="/blog" className="hover:text-primary-600 transition-colors font-medium">Blog</a>
         </div>
         <p>&copy; {new Date().getFullYear()} Word To PDF Convertor. All rights reserved. Built client-side for absolute privacy.</p>
