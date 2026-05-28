@@ -4,11 +4,20 @@ import {
   Combine, RotateCw, KeyRound, Shrink, ScanEye, Image, 
   FileText, ArrowRightLeft, FileCode, Shield, Zap, Sparkles, CheckCircle,
   Split, Trash2, Scissors, LayoutGrid, Eye, FileDigit, Crop, Eraser, Stamp,
-  PenTool, Share2, Cpu, FileQuestion, Globe, FileSpreadsheet, LockOpen, Scaling, Printer
+  PenTool, Share2, Cpu, FileQuestion, Globe, FileSpreadsheet, LockOpen, Scaling, Printer,
+  ChevronLeft, ChevronRight
 } from 'lucide-react';
 
 function Home() {
   // Removed unused filter state
+  
+  const scrollCarousel = (id, direction) => {
+    const container = document.getElementById(id);
+    if (container) {
+      const scrollAmount = direction === 'left' ? -340 : 340;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   const tools = [
     // AI PDF
@@ -462,7 +471,7 @@ function Home() {
           const categoryTools = tools.filter(t => t.category === category.id);
           
           return (
-            <section key={category.id} className="space-y-4 animate-in fade-in duration-500">
+            <section key={category.id} className="space-y-4 animate-in fade-in duration-500 relative group/section">
               <div className="flex items-end justify-between px-1">
                 <div>
                   <h2 className="text-xl md:text-2xl font-bold font-display text-slate-900 tracking-tight">
@@ -470,10 +479,30 @@ function Home() {
                   </h2>
                   <p className="text-sm text-slate-500 mt-1">{category.desc}</p>
                 </div>
+                {/* Desktop Carousel Controls */}
+                <div className="hidden md:flex space-x-2">
+                  <button 
+                    onClick={() => scrollCarousel(`carousel-${category.id}`, 'left')}
+                    className="p-1.5 rounded-full border border-slate-200 bg-white text-slate-500 hover:text-slate-800 hover:bg-slate-50 shadow-sm transition-colors"
+                    aria-label="Scroll left"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button 
+                    onClick={() => scrollCarousel(`carousel-${category.id}`, 'right')}
+                    className="p-1.5 rounded-full border border-slate-200 bg-white text-slate-500 hover:text-slate-800 hover:bg-slate-50 shadow-sm transition-colors"
+                    aria-label="Scroll right"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
               
               {/* Horizontal Scroll Container */}
-              <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 md:mx-0 md:px-1">
+              <div 
+                id={`carousel-${category.id}`}
+                className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 md:mx-0 md:px-1"
+              >
                 {categoryTools.map(tool => {
                   const IconComponent = tool.icon;
                   return (
@@ -558,7 +587,13 @@ function Home() {
             { q: "Is Word To PDF Convertor completely free?", a: "Yes, all our PDF tools are 100% free to use. There are no hidden fees, subscriptions, or daily limits." },
             { q: "Are my files safe and secure?", a: "Absolutely. We use local WebAssembly technology, meaning your files are processed entirely inside your browser and are never uploaded to any remote server." },
             { q: "Do you add watermarks to my PDFs?", a: "No. Your generated and edited documents remain completely clean and professional without any third-party branding." },
-            { q: "Does it work on mobile devices?", a: "Yes, our tools are fully responsive and work smoothly across iOS, Android, macOS, and Windows without needing any app installations." }
+            { q: "Does it work on mobile devices?", a: "Yes, our tools are fully responsive and work smoothly across iOS, Android, macOS, and Windows without needing any app installations." },
+            { q: "Is there a limit on file size or pages?", a: "Since all processing is done locally on your device, there are no artificial file size limits. The only limit is your browser's local memory capacity." },
+            { q: "Do I need to install any software?", a: "No installation is required. Our entire suite of tools runs directly inside your web browser as a modern web application." },
+            { q: "Can I convert scanned documents?", a: "Yes, we offer an advanced client-side OCR (Optical Character Recognition) tool to extract text from scanned PDFs and images." },
+            { q: "Is batch processing supported?", a: "Yes, many of our tools like Merge PDF allow you to select and process multiple files at once for maximum productivity." },
+            { q: "What formats can I convert to PDF?", a: "You can easily convert Word, Excel, PowerPoint, JPG, PNG, plain text files, HTML, and many other formats into high-quality PDFs." },
+            { q: "Do you keep a copy of my converted files?", a: "No. Because we use a zero-upload model, your files never leave your computer. We have zero access to your data, ensuring absolute privacy." }
           ].map((faq, idx) => (
             <div key={idx} className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-primary-300 transition-colors">
               <h4 className="font-bold text-slate-900 text-sm mb-2 flex items-start">
