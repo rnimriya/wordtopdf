@@ -548,6 +548,31 @@ function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-8">
+        <h2 className="text-2xl md:text-3xl font-extrabold font-display leading-tight text-slate-900 text-center mb-8">
+          Frequently Asked Questions
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {[
+            { q: "Is Word To PDF Convertor completely free?", a: "Yes, all our PDF tools are 100% free to use. There are no hidden fees, subscriptions, or daily limits." },
+            { q: "Are my files safe and secure?", a: "Absolutely. We use local WebAssembly technology, meaning your files are processed entirely inside your browser and are never uploaded to any remote server." },
+            { q: "Do you add watermarks to my PDFs?", a: "No. Your generated and edited documents remain completely clean and professional without any third-party branding." },
+            { q: "Does it work on mobile devices?", a: "Yes, our tools are fully responsive and work smoothly across iOS, Android, macOS, and Windows without needing any app installations." }
+          ].map((faq, idx) => (
+            <div key={idx} className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-primary-300 transition-colors">
+              <h4 className="font-bold text-slate-900 text-sm mb-2 flex items-start">
+                <FileQuestion className="w-4 h-4 text-primary-500 mr-2 shrink-0 mt-0.5" />
+                {faq.q}
+              </h4>
+              <p className="text-xs text-slate-600 leading-relaxed pl-6">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }
