@@ -160,13 +160,7 @@ function Navbar() {
               </Link>
             ))}
 
-            {/* Blog */}
-            <a 
-              href="/blog" 
-              className="text-slate-650 hover:text-slate-950 hover:bg-slate-50 px-2.5 py-2 text-xs xl:text-sm font-semibold rounded-lg transition-colors"
-            >
-              Blog
-            </a>
+
 
             {/* CTA */}
             <Link 
@@ -283,14 +277,7 @@ function Navbar() {
             ))}
           </div>
 
-          <div className="pt-2 border-t border-slate-100">
-            <a 
-              href="/blog" 
-              className="block px-3 py-1 text-xs font-bold text-slate-700 hover:text-slate-950 transition-colors"
-            >
-              Blog & Articles
-            </a>
-          </div>
+
           
           <Link 
             to="/merge-pdf"
