@@ -426,7 +426,7 @@ function Home() {
     <div className="space-y-8">
       
       {/* Hero Section (Compact & Light Theme) */}
-      <section className="text-center space-y-3 max-w-4xl mx-auto pt-1 animate-in fade-in slide-in-from-bottom-6 duration-500">
+      <section className="text-center space-y-3 max-w-4xl mx-auto pt-6 animate-in fade-in slide-in-from-bottom-6 duration-500">
         
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-display text-slate-900 leading-tight">
           The Premium, Private <br />
@@ -438,7 +438,7 @@ function Home() {
         </p>
 
         {/* Feature Highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto pt-1">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto pt-6">
           <div className="flex items-center space-x-2 bg-white border border-slate-200/80 rounded-xl p-2.5 text-left shadow-sm">
             <Shield className="h-4.5 w-4.5 text-emerald-600 shrink-0" />
             <span className="text-xs font-semibold text-slate-700">100% Secure & Private</span>
