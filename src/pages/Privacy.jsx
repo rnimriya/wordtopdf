@@ -34,13 +34,13 @@ function Privacy() {
         <ul className="list-disc pl-6 space-y-2">
           <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to PDF Converter.</li>
           <li><strong>Service</strong> refers to the Website.</li>
-          <li><strong>Website</strong> refers to WordToPDFConvertor, accessible from <a href="https://wordtopdfconvertor.in" className="text-primary-400 hover:underline">https://wordtopdfconvertor.in</a>.</li>
+          <li><strong>Website</strong> refers to Word To PDF Convertor, accessible from <a href="https://wordtopdfconvertor.in" className="text-primary-400 hover:underline">https://wordtopdfconvertor.in</a>.</li>
           <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
         </ul>
 
         <h2 className="text-xl font-bold text-white mt-8 mb-2 font-display">Data Collection and Processing</h2>
         <p>
-          A core principle of WordToPDFConvertor is that **document processing takes place entirely client-side in the user's web browser.**
+          A core principle of Word To PDF Convertor is that **document processing takes place entirely client-side in the user's web browser.**
         </p>
         <p>
           When you upload files (such as PDFs, Word documents, Excel sheets, or image files) to compile, merge, rotate, encrypt, or convert, **these files are never transmitted to external cloud servers.** The file processing is executed locally in your browser memory buffer (using client-side scripts and WebAssembly). Therefore, we do not collect, store, or share your document contents.

@@ -84,7 +84,7 @@ const DEFAULT_HTML = `<!DOCTYPE html>
 </head>
 <body>
   <div class="header">
-    <div class="logo">WordToPDFConvertor</div>
+    <div class="logo">Word To PDF Convertor</div>
     <div class="title">HTML to PDF Document</div>
     <div class="subtitle">Generated client-side inside your browser</div>
   </div>
@@ -133,7 +133,7 @@ const DEFAULT_HTML = `<!DOCTYPE html>
   </div>
   
   <div class="footer">
-    PDF generated via WordToPDFConvertor HTML compilation engine.
+    PDF generated via Word To PDF Convertor HTML compilation engine.
   </div>
 </body>
 </html>`;

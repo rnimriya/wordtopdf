@@ -13,7 +13,7 @@ function QuestionGen() {
     setTimeout(() => {
       setQuiz([
         { q: "What security layer is applied?", a: "Direct local browser memory sandboxing." },
-        { q: "Do files upload to WordToPDFConvertor?", a: "No, they compile strictly inside client WebAssembly." }
+        { q: "Do files upload to Word To PDF Convertor?", a: "No, they compile strictly inside client WebAssembly." }
       ]);
       setIsExecuting(false);
     }, 1500);

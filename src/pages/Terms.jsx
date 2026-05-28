@@ -32,7 +32,7 @@ function Terms() {
           <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to PDF Converter.</li>
           <li><strong>Country</strong> refers to: New York, United States.</li>
           <li><strong>Service</strong> refers to the Website.</li>
-          <li><strong>Website</strong> refers to WordToPDFConvertor, accessible from <a href="https://wordtopdfconvertor.in" className="text-primary-400 hover:underline">https://wordtopdfconvertor.in</a>.</li>
+          <li><strong>Website</strong> refers to Word To PDF Convertor, accessible from <a href="https://wordtopdfconvertor.in" className="text-primary-400 hover:underline">https://wordtopdfconvertor.in</a>.</li>
           <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service.</li>
         </ul>
 

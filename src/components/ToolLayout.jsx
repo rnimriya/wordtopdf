@@ -293,7 +293,7 @@ function ToolLayout({
         { q: 'Does my uploaded watermark logo image leave my device?', a: 'No. All rendering and layout placement are performed locally within your browser sandbox.' },
         { q: 'Can I rotate the text watermark?', a: 'Yes, you can adjust the rotation angle from -90 to +90 degrees to lay text diagonally.' },
         { q: 'What font options do you support for text watermarks?', a: 'We support standard high-compatibility fonts like Helvetica, Times, and Courier in bold and italic.' },
-        { q: 'Does WordToPDFConvertor add its own watermarks to my files?', a: 'No. Your compiled outputs remain entirely clean, professional, and free of any third-party branding.' }
+        { q: 'Does Word To PDF Convertor add its own watermarks to my files?', a: 'No. Your compiled outputs remain entirely clean, professional, and free of any third-party branding.' }
       ];
     } else if (t.includes('repair')) {
       return [
@@ -441,13 +441,13 @@ function ToolLayout({
     }
     
     return [
-      { q: `Is it safe to use this online tool to ${action}?`, a: `Yes, WordToPDFConvertor is 100% secure. All document processing takes place directly inside your web browser's local sandbox memory using client-side WebAssembly execution. Your private data is never sent over the network to any third-party server.` },
-      { q: `Does WordToPDFConvertor upload my files to any server?`, a: `No, never. Unlike other online converters, WordToPDFConvertor operates on a zero-upload model. Your files remain entirely on your local machine, rendering in-memory buffer grids, which completely eliminates data leakage risk.` },
+      { q: `Is it safe to use this online tool to ${action}?`, a: `Yes, Word To PDF Convertor is 100% secure. All document processing takes place directly inside your web browser's local sandbox memory using client-side WebAssembly execution. Your private data is never sent over the network to any third-party server.` },
+      { q: `Does Word To PDF Convertor upload my files to any server?`, a: `No, never. Unlike other online converters, Word To PDF Convertor operates on a zero-upload model. Your files remain entirely on your local machine, rendering in-memory buffer grids, which completely eliminates data leakage risk.` },
       { q: `Are there file size limitations when I ${action}?`, a: `No. Since processing happens client-side utilizing your browser's memory and CPU resources, we impose no artificial file size limits or upload caps. You can process large files easily depending on your machine's hardware capability.` },
-      { q: `Do I need to sign up or create an account to use this utility?`, a: `No sign-up or registry is required. All converters and PDF editors on WordToPDFConvertor are fully accessible, open, and free for all users with no daily caps or subscriptions.` },
+      { q: `Do I need to sign up or create an account to use this utility?`, a: `No sign-up or registry is required. All converters and PDF editors on Word To PDF Convertor are fully accessible, open, and free for all users with no daily caps or subscriptions.` },
       { q: `Does this ${titleStr} tool add any watermarks?`, a: `No, we do not add any branding, logo overlays, or watermarks to your processed documents. The downloaded outputs remain clean and professional.` },
       { q: `What technology powers the client-side conversions?`, a: `We utilize modern compiled web technologies such as WebAssembly (Wasm), pdf-lib for structure writing, pdfjs-dist for viewport rendering, and standard browser Canvas APIs. This ensures native performance right in your browser.` },
-      { q: `Can I use this tool on my smartphone or tablet?`, a: `Absolutely. WordToPDFConvertor is responsive and works smoothly across mobile Safari, Chrome, and desktop viewports, executing in-browser scripts on iOS, Android, macOS, and Windows.` },
+      { q: `Can I use this tool on my smartphone or tablet?`, a: `Absolutely. Word To PDF Convertor is responsive and works smoothly across mobile Safari, Chrome, and desktop viewports, executing in-browser scripts on iOS, Android, macOS, and Windows.` },
       { q: `Can I use this tool offline?`, a: `Yes! Once the webpage is loaded, all processing scripts reside in your local browser cache. You can disconnect your internet connection and continue using the tools safely offline.` }
     ];
   };
@@ -503,7 +503,7 @@ function ToolLayout({
   useEffect(() => {
     // 1. Set page title and meta description dynamically
     const originalTitle = document.title;
-    document.title = `Free ${title} Online | 100% Private WordToPDFConvertor`;
+    document.title = `Free ${title} Online | 100% Private Word To PDF Convertor`;
 
     let metaDesc = document.querySelector('meta[name="description"]');
     let originalDesc = metaDesc ? metaDesc.getAttribute('content') : '';
@@ -834,11 +834,11 @@ function ToolLayout({
         </div>
       </section>
 
-      {/* Section 2: Why Choose WordToPDFConvertor Benefits Grid */}
+      {/* Section 2: Why Choose Word To PDF Convertor Benefits Grid */}
       <section className="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 space-y-6 max-w-5xl mx-auto shadow-sm">
         <div className="text-center space-y-3">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display">
-            Why Choose WordToPDFConvertor for {title}?
+            Why Choose Word To PDF Convertor for {title}?
           </h2>
           <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Experience the safest, fastest, and most efficient way to manage and convert your documents.

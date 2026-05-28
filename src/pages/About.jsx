@@ -8,7 +8,7 @@ function About() {
       {/* Page Header */}
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent font-display">
-          About WordToPDFConvertor
+          About Word To PDF Convertor
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
           We build modern, serverless document processing tools designed to protect user privacy.
@@ -23,7 +23,7 @@ function About() {
             Conventional web services monetize user documents by forcing network uploads to remote cloud servers. This exposes corporate transactions, tax records, and medical files to data leak vulnerabilities and privacy violations.
           </p>
           <p className="text-slate-400 leading-relaxed">
-            At **WordToPDFConvertor**, we believe document processing should be safe and local. By leveraging cutting-edge web technologies like WebAssembly, HTML5 canvas, and local worker sandboxes, we compile and encrypt files directly in the browser. Your files never touch a server, ensuring absolute privacy.
+            At **Word To PDF Convertor**, we believe document processing should be safe and local. By leveraging cutting-edge web technologies like WebAssembly, HTML5 canvas, and local worker sandboxes, we compile and encrypt files directly in the browser. Your files never touch a server, ensuring absolute privacy.
           </p>
         </div>
 
