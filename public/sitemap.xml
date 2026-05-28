@@ -27,24 +27,24 @@
   <url><loc>https://pdf-pi-two.vercel.app/share-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pdf-pi-two.vercel.app/sign-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pdf-pi-two.vercel.app/request-signatures</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/pdf-to-word</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/pdf-to-excel</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/pdf-to-jpg</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/pdf-to-png</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/pdf-to-word</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/pdf-to-excel</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/pdf-to-jpg</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/pdf-to-png</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://pdf-pi-two.vercel.app/pdf-to-ppt</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/word-to-pdf</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/excel-to-pdf</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/ppt-to-pdf</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/jpg-to-pdf</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/text-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/rtf-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/odt-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/word-to-pdf</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/excel-to-pdf</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/ppt-to-pdf</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/jpg-to-pdf</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/text-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/rtf-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/odt-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pdf-pi-two.vercel.app/pdf-scanner</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/autocad-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/openoffice-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/ebooks-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/iwork-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdf-pi-two.vercel.app/convert/pdf-to-pdfa</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/autocad-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/openoffice-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/ebooks-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/iwork-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pdf-pi-two.vercel.app/pdf-to-pdfa</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pdf-pi-two.vercel.app/unlock-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pdf-pi-two.vercel.app/flatten-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pdf-pi-two.vercel.app/pdf-converter</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>

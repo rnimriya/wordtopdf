@@ -30,18 +30,18 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-slate-900 mb-2 text-[11px] uppercase tracking-wider">Convert to PDF</h4>
           <ul className="space-y-1 text-xs">
-            <li><Link to="/convert/word-to-pdf" className="hover:text-primary-600 transition-colors">Word to PDF</Link></li>
-            <li><Link to="/convert/excel-to-pdf" className="hover:text-primary-600 transition-colors">Excel to PDF</Link></li>
-            <li><Link to="/convert/ppt-to-pdf" className="hover:text-primary-600 transition-colors">PPT to PDF</Link></li>
-            <li><Link to="/convert/jpg-to-pdf" className="hover:text-primary-600 transition-colors">JPG to PDF</Link></li>
-            <li><Link to="/convert/autocad-to-pdf" className="hover:text-primary-600 transition-colors">AutoCAD to PDF</Link></li>
-            <li><Link to="/convert/openoffice-to-pdf" className="hover:text-primary-600 transition-colors">OpenOffice to PDF</Link></li>
-            <li><Link to="/convert/ebooks-to-pdf" className="hover:text-primary-600 transition-colors">eBooks to PDF</Link></li>
-            <li><Link to="/convert/iwork-to-pdf" className="hover:text-primary-600 transition-colors">iWork to PDF</Link></li>
+            <li><Link to="/word-to-pdf" className="hover:text-primary-600 transition-colors">Word to PDF</Link></li>
+            <li><Link to="/excel-to-pdf" className="hover:text-primary-600 transition-colors">Excel to PDF</Link></li>
+            <li><Link to="/ppt-to-pdf" className="hover:text-primary-600 transition-colors">PPT to PDF</Link></li>
+            <li><Link to="/jpg-to-pdf" className="hover:text-primary-600 transition-colors">JPG to PDF</Link></li>
+            <li><Link to="/autocad-to-pdf" className="hover:text-primary-600 transition-colors">AutoCAD to PDF</Link></li>
+            <li><Link to="/openoffice-to-pdf" className="hover:text-primary-600 transition-colors">OpenOffice to PDF</Link></li>
+            <li><Link to="/ebooks-to-pdf" className="hover:text-primary-600 transition-colors">eBooks to PDF</Link></li>
+            <li><Link to="/iwork-to-pdf" className="hover:text-primary-600 transition-colors">iWork to PDF</Link></li>
             <li><Link to="/html-to-pdf" className="hover:text-primary-600 transition-colors">HTML to PDF</Link></li>
-            <li><Link to="/convert/text-to-pdf" className="hover:text-primary-600 transition-colors">Text to PDF</Link></li>
-            <li><Link to="/convert/rtf-to-pdf" className="hover:text-primary-600 transition-colors">RTF to PDF</Link></li>
-            <li><Link to="/convert/odt-to-pdf" className="hover:text-primary-600 transition-colors">ODT to PDF</Link></li>
+            <li><Link to="/text-to-pdf" className="hover:text-primary-600 transition-colors">Text to PDF</Link></li>
+            <li><Link to="/rtf-to-pdf" className="hover:text-primary-600 transition-colors">RTF to PDF</Link></li>
+            <li><Link to="/odt-to-pdf" className="hover:text-primary-600 transition-colors">ODT to PDF</Link></li>
           </ul>
         </div>
 
@@ -49,13 +49,13 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-slate-900 mb-2 text-[11px] uppercase tracking-wider">Convert From</h4>
           <ul className="space-y-1 text-xs">
-            <li><Link to="/convert/pdf-to-word" className="hover:text-primary-600 transition-colors">PDF to Word</Link></li>
-            <li><Link to="/convert/pdf-to-excel" className="hover:text-primary-600 transition-colors">PDF to Excel</Link></li>
+            <li><Link to="/pdf-to-word" className="hover:text-primary-600 transition-colors">PDF to Word</Link></li>
+            <li><Link to="/pdf-to-excel" className="hover:text-primary-600 transition-colors">PDF to Excel</Link></li>
             <li><Link to="/pdf-to-ppt" className="hover:text-primary-600 transition-colors">PDF to PPT</Link></li>
-            <li><Link to="/convert/pdf-to-jpg" className="hover:text-primary-600 transition-colors">PDF to JPG</Link></li>
-            <li><Link to="/convert/pdf-to-png" className="hover:text-primary-600 transition-colors">PDF to PNG</Link></li>
+            <li><Link to="/pdf-to-jpg" className="hover:text-primary-600 transition-colors">PDF to JPG</Link></li>
+            <li><Link to="/pdf-to-png" className="hover:text-primary-600 transition-colors">PDF to PNG</Link></li>
             <li><Link to="/extract-images" className="hover:text-primary-600 transition-colors">Extract Images</Link></li>
-            <li><Link to="/convert/pdf-to-pdfa" className="hover:text-primary-600 transition-colors">PDF to PDF/A</Link></li>
+            <li><Link to="/pdf-to-pdfa" className="hover:text-primary-600 transition-colors">PDF to PDF/A</Link></li>
             <li><Link to="/pdf-scanner" className="hover:text-primary-600 transition-colors">PDF Scanner</Link></li>
             <li><Link to="/ocr-pdf" className="hover:text-primary-600 transition-colors">PDF OCR</Link></li>
           </ul>

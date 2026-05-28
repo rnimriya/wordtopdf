@@ -219,7 +219,7 @@ function Home() {
     {
       name: 'Word to PDF',
       description: 'Convert Microsoft Word (.docx) files into clean PDF documents.',
-      path: '/convert/word-to-pdf',
+      path: '/word-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-blue-600 to-indigo-500'
@@ -227,7 +227,7 @@ function Home() {
     {
       name: 'Excel to PDF',
       description: 'Convert spreadsheets (.xlsx) into structured PDF document grids.',
-      path: '/convert/excel-to-pdf',
+      path: '/excel-to-pdf',
       icon: FileSpreadsheet,
       category: 'to-pdf',
       color: 'from-emerald-600 to-teal-500'
@@ -235,7 +235,7 @@ function Home() {
     {
       name: 'PPT to PDF',
       description: 'Convert PowerPoint (.pptx) slide files into presentation PDFs.',
-      path: '/convert/ppt-to-pdf',
+      path: '/ppt-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-orange-500 to-rose-500'
@@ -243,7 +243,7 @@ function Home() {
     {
       name: 'JPG to PDF',
       description: 'Convert JPG photos and images into printable PDF format.',
-      path: '/convert/jpg-to-pdf',
+      path: '/jpg-to-pdf',
       icon: Image,
       category: 'to-pdf',
       color: 'from-pink-500 to-purple-500'
@@ -251,7 +251,7 @@ function Home() {
     {
       name: 'Text to PDF',
       description: 'Write or paste plain text blocks and download them as a PDF document.',
-      path: '/convert/text-to-pdf',
+      path: '/text-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-slate-500 to-slate-700'
@@ -267,7 +267,7 @@ function Home() {
     {
       name: 'RTF to PDF',
       description: 'Convert rich text formatting (.rtf) documents into clean PDFs.',
-      path: '/convert/rtf-to-pdf',
+      path: '/rtf-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-blue-500 to-indigo-550'
@@ -275,7 +275,7 @@ function Home() {
     {
       name: 'ODT to PDF',
       description: 'Convert OpenDocument text files (.odt) into standard PDFs.',
-      path: '/convert/odt-to-pdf',
+      path: '/odt-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-sky-500 to-blue-600'
@@ -300,7 +300,7 @@ function Home() {
     {
       name: 'AutoCAD to PDF',
       description: 'Convert AutoCAD CAD files (.dwg, .dxf) into clean PDF layouts.',
-      path: '/convert/autocad-to-pdf',
+      path: '/autocad-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-cyan-500 to-blue-500'
@@ -308,7 +308,7 @@ function Home() {
     {
       name: 'OpenOffice to PDF',
       description: 'Convert OpenOffice ODT, ODS, and ODP documents to PDF files.',
-      path: '/convert/openoffice-to-pdf',
+      path: '/openoffice-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-sky-500 to-blue-600'
@@ -316,7 +316,7 @@ function Home() {
     {
       name: 'eBooks to PDF',
       description: 'Convert EPUB, MOBI, and other eBook formats to PDF layout formats.',
-      path: '/convert/ebooks-to-pdf',
+      path: '/ebooks-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-violet-500 to-purple-650'
@@ -324,7 +324,7 @@ function Home() {
     {
       name: 'iWork to PDF',
       description: 'Convert Apple Keynote, Pages, and Numbers files into high-quality PDFs.',
-      path: '/convert/iwork-to-pdf',
+      path: '/iwork-to-pdf',
       icon: FileText,
       category: 'to-pdf',
       color: 'from-amber-500 to-orange-600'
@@ -334,7 +334,7 @@ function Home() {
     {
       name: 'PDF to Word',
       description: 'Convert PDF files into Microsoft Word (.docx) documents.',
-      path: '/convert/pdf-to-word',
+      path: '/pdf-to-word',
       icon: ArrowRightLeft,
       category: 'from-pdf',
       badge: 'Popular',
@@ -343,7 +343,7 @@ function Home() {
     {
       name: 'PDF to Excel',
       description: 'Extract tables from PDFs and write them into spreadsheet grids.',
-      path: '/convert/pdf-to-excel',
+      path: '/pdf-to-excel',
       icon: ArrowRightLeft,
       category: 'from-pdf',
       color: 'from-emerald-500 to-emerald-700'
@@ -359,7 +359,7 @@ function Home() {
     {
       name: 'PDF to JPG',
       description: 'Convert PDF pages into high-resolution JPG images.',
-      path: '/convert/pdf-to-jpg',
+      path: '/pdf-to-jpg',
       icon: Image,
       category: 'from-pdf',
       color: 'from-pink-500 to-purple-600'
@@ -367,7 +367,7 @@ function Home() {
     {
       name: 'PDF to PNG',
       description: 'Convert PDF pages into transparent PNG raster images.',
-      path: '/convert/pdf-to-png',
+      path: '/pdf-to-png',
       icon: Image,
       category: 'from-pdf',
       color: 'from-cyan-500 to-blue-600'
@@ -375,7 +375,7 @@ function Home() {
     {
       name: 'PDF to PDF/A',
       description: 'Convert PDF documents to ISO-compliant PDF/A format for long-term archiving.',
-      path: '/convert/pdf-to-pdfa',
+      path: '/pdf-to-pdfa',
       icon: FileText,
       category: 'from-pdf',
       color: 'from-slate-500 to-slate-700'

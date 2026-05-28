@@ -124,26 +124,26 @@ function App() {
                 <Route path="/request-signatures" element={<RequestSignatures />} />
 
                 {/* Convert from PDF */}
-                <Route path="/convert/pdf-to-word" element={<PdfToWord />} />
-                <Route path="/convert/pdf-to-excel" element={<PdfToExcel />} />
-                <Route path="/convert/pdf-to-jpg" element={<PdfToJpg />} />
-                <Route path="/convert/pdf-to-png" element={<PdfToPng />} />
+                <Route path="/pdf-to-word" element={<PdfToWord />} />
+                <Route path="/pdf-to-excel" element={<PdfToExcel />} />
+                <Route path="/pdf-to-jpg" element={<PdfToJpg />} />
+                <Route path="/pdf-to-png" element={<PdfToPng />} />
                 <Route path="/pdf-to-ppt" element={<PdfToPpt />} />
                 
                 {/* Convert to PDF */}
-                <Route path="/convert/word-to-pdf" element={<WordToPdf />} />
-                <Route path="/convert/excel-to-pdf" element={<ExcelToPdf />} />
-                <Route path="/convert/ppt-to-pdf" element={<PptToPdf />} />
-                <Route path="/convert/jpg-to-pdf" element={<JpgToPdf />} />
-                <Route path="/convert/text-to-pdf" element={<TextToPdf />} />
-                <Route path="/convert/rtf-to-pdf" element={<RtfToPdf />} />
-                <Route path="/convert/odt-to-pdf" element={<OdtToPdf />} />
+                <Route path="/word-to-pdf" element={<WordToPdf />} />
+                <Route path="/excel-to-pdf" element={<ExcelToPdf />} />
+                <Route path="/ppt-to-pdf" element={<PptToPdf />} />
+                <Route path="/jpg-to-pdf" element={<JpgToPdf />} />
+                <Route path="/text-to-pdf" element={<TextToPdf />} />
+                <Route path="/rtf-to-pdf" element={<RtfToPdf />} />
+                <Route path="/odt-to-pdf" element={<OdtToPdf />} />
                 <Route path="/pdf-scanner" element={<PdfScanner />} />
-                <Route path="/convert/autocad-to-pdf" element={<AutocadToPdf />} />
-                <Route path="/convert/openoffice-to-pdf" element={<OpenOfficeToPdf />} />
-                <Route path="/convert/ebooks-to-pdf" element={<EbooksToPdf />} />
-                <Route path="/convert/iwork-to-pdf" element={<IworkToPdf />} />
-                <Route path="/convert/pdf-to-pdfa" element={<PdfToPdfa />} />
+                <Route path="/autocad-to-pdf" element={<AutocadToPdf />} />
+                <Route path="/openoffice-to-pdf" element={<OpenOfficeToPdf />} />
+                <Route path="/ebooks-to-pdf" element={<EbooksToPdf />} />
+                <Route path="/iwork-to-pdf" element={<IworkToPdf />} />
+                <Route path="/pdf-to-pdfa" element={<PdfToPdfa />} />
 
                 {/* More */}
                 <Route path="/unlock-pdf" element={<UnlockPdf />} />
