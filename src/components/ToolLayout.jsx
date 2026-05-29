@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ShieldCheck, FileText, ArrowLeft, RefreshCw, Loader2 } from 'lucide-react';
+import { ShieldCheck, FileText, ArrowLeft, RefreshCw, Loader2, X, Sparkles, ShieldAlert } from 'lucide-react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import Dropzone from './Dropzone.jsx';
 
 function ToolLayout({
@@ -22,7 +24,117 @@ function ToolLayout({
   accept = ".pdf",
   children
 }) {
+  const { data: session } = useSession();
+  const router = useRouter();
   const [openFaq, setOpenFaq] = useState(null);
+  
+  // SaaS Usage Tracker & Gating States
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [modalReason, setModalReason] = useState('limit'); // 'limit-local', 'limit-server', 'pro-only', 'file-size'
+  const [localConversionsToday, setLocalConversionsToday] = useState(0);
+  const [serverUsage, setServerUsage] = useState(null);
+
+  // Determine if it is a Pro-only tool (AI assistants and PDF OCR)
+  const isAiTool = title.toLowerCase().includes('ai') || 
+                   title.toLowerCase().includes('chat') || 
+                   title.toLowerCase().includes('summariz') || 
+                   title.toLowerCase().includes('question') || 
+                   title.toLowerCase().includes('translate');
+  const isOcr = title.toLowerCase().includes('ocr');
+  const isProOnly = isAiTool || isOcr;
+
+  // File size ceilings
+  const isPro = session?.user?.subscriptionStatus === 'active';
+  const maxFileSizeMB = isPro ? 250 : (session ? 20 : 10);
+
+  // Sync usage configurations on load or execution change
+  useEffect(() => {
+    const todayStr = new Date().toISOString().split('T')[0];
+    const localData = JSON.parse(localStorage.getItem('pdf_conversions') || '{}');
+    if (localData.date === todayStr) {
+      setLocalConversionsToday(localData.count || 0);
+    } else {
+      setLocalConversionsToday(0);
+    }
+
+    if (session) {
+      fetch('/api/usage/check')
+        .then(res => res.json())
+        .then(data => {
+          if (data && !data.error) {
+            setServerUsage(data);
+          }
+        })
+        .catch(err => console.error("Error checking usage:", err));
+    }
+  }, [session, isExecuting]);
+
+  // Handle conversion execution checking
+  const handleExecuteClick = async (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+
+    // 1. Pro feature gate
+    if (isProOnly && !isPro) {
+      setModalReason('pro-only');
+      setShowUpgradeModal(true);
+      return;
+    }
+
+    // 2. File size ceiling gate
+    if (file) {
+      const filesArray = Array.isArray(file) ? file : [file];
+      for (const f of filesArray) {
+        const fileSizeMB = f.size / 1024 / 1024;
+        if (fileSizeMB > maxFileSizeMB) {
+          setModalReason('file-size');
+          setShowUpgradeModal(true);
+          return;
+        }
+      }
+    }
+
+    // 3. Conversion count gate
+    if (session) {
+      const count = serverUsage ? serverUsage.count : 0;
+      const limit = isPro ? 999999 : 5;
+      
+      if (count >= limit) {
+        setModalReason('limit-server');
+        setShowUpgradeModal(true);
+        return;
+      }
+
+      // Track server-side increment
+      try {
+        const res = await fetch('/api/usage/increment', { method: 'POST' });
+        const data = await res.json();
+        if (!res.ok || !data.allowed) {
+          setModalReason('limit-server');
+          setShowUpgradeModal(true);
+          return;
+        }
+        setServerUsage(prev => prev ? { ...prev, count: data.count } : null);
+      } catch (err) {
+        console.error("Failed to increment usage:", err);
+      }
+    } else {
+      if (localConversionsToday >= 3) {
+        setModalReason('limit-local');
+        setShowUpgradeModal(true);
+        return;
+      }
+
+      // Record local usage increment
+      const todayStr = new Date().toISOString().split('T')[0];
+      const localData = { date: todayStr, count: localConversionsToday + 1 };
+      localStorage.setItem('pdf_conversions', JSON.stringify(localData));
+      setLocalConversionsToday(localConversionsToday + 1);
+    }
+
+    if (onExecute) {
+      onExecute();
+    }
+  };
 
   // Dynamic step instructions helper for copywriting
   const getStepGuideData = (titleStr) => {
@@ -555,8 +667,13 @@ function ToolLayout({
       
       {/* Tool Header (Compact & Light Theme) */}
       <div className="text-center space-y-3 max-w-3xl mx-auto pt-2">
-        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
-          {title}
+        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex items-center justify-center gap-2">
+          <span>{title}</span>
+          {isProOnly && (
+            <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-md select-none">
+              Pro Only
+            </span>
+          )}
         </h1>
         <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
           {description}
@@ -658,7 +775,7 @@ function ToolLayout({
 
                 {/* Primary Button */}
                 <button
-                  onClick={onExecute}
+                  onClick={handleExecuteClick}
                   disabled={isExecuting}
                   className="w-full glass-button-primary"
                 >
@@ -948,6 +1065,90 @@ function ToolLayout({
         <section className="max-w-4xl mx-auto border-t border-slate-200 pt-12 space-y-8">
           {seoContent}
         </section>
+      )}
+
+      {/* SaaS Upgrade/Auth Modal */}
+      {showUpgradeModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/40 backdrop-blur-md animate-in fade-in duration-300">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-md w-full overflow-hidden animate-in zoom-in-95 duration-300">
+            {/* Header */}
+            <div className="bg-gradient-to-tr from-primary-600 to-red-500 p-6 text-white relative">
+              <button 
+                onClick={() => setShowUpgradeModal(false)}
+                className="absolute top-4 right-4 p-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+                aria-label="Close modal"
+              >
+                <X className="h-4 w-4" />
+              </button>
+              
+              <div className="p-2.5 bg-white/10 rounded-xl w-fit mb-3">
+                {modalReason === 'pro-only' ? (
+                  <Sparkles className="h-5 w-5 text-white" />
+                ) : (
+                  <ShieldAlert className="h-5 w-5 text-white" />
+                )}
+              </div>
+              
+              <h3 className="font-display font-extrabold text-lg">
+                {modalReason === 'pro-only' && "Premium Pro Feature"}
+                {modalReason === 'file-size' && "File Size Limit Exceeded"}
+                {modalReason === 'limit-local' && "Daily Limit Reached"}
+                {modalReason === 'limit-server' && "Daily Limit Reached"}
+              </h3>
+              <p className="text-xs text-white/85 mt-1 leading-relaxed">
+                {modalReason === 'pro-only' && "This tool utilizes advanced capabilities reserved exclusively for our Pro subscribers."}
+                {modalReason === 'file-size' && `Free tier supports uploads up to ${maxFileSizeMB}MB. Upgrade for larger file limits.`}
+                {modalReason === 'limit-local' && "You have used your 3 free conversions for today without an account."}
+                {modalReason === 'limit-server' && "You have used your 5 free registered conversions for today."}
+              </p>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 space-y-4">
+              <div className="space-y-2.5">
+                <div className="flex items-start gap-2.5 text-xs text-slate-650">
+                  <span className="text-emerald-500 font-bold text-sm">✓</span>
+                  <span><strong>Unlimited Conversions:</strong> Never worry about daily limits again.</span>
+                </div>
+                <div className="flex items-start gap-2.5 text-xs text-slate-650">
+                  <span className="text-emerald-500 font-bold text-sm">✓</span>
+                  <span><strong>250 MB Files:</strong> Upload large textbooks, manuals, and bulk assets.</span>
+                </div>
+                <div className="flex items-start gap-2.5 text-xs text-slate-650">
+                  <span className="text-emerald-500 font-bold text-sm">✓</span>
+                  <span><strong>Advanced OCR & Real AI:</strong> Access scanned text recognition and intelligent chat services.</span>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-col gap-2">
+                {modalReason === 'limit-local' && (
+                  <Link
+                    href="/signup"
+                    onClick={() => setShowUpgradeModal(false)}
+                    className="block text-center w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl transition-colors border border-slate-200"
+                  >
+                    Create Free Account (5 limit/day)
+                  </Link>
+                )}
+                
+                <Link
+                  href="/pricing"
+                  onClick={() => setShowUpgradeModal(false)}
+                  className="block text-center w-full py-2.5 bg-primary-500 hover:bg-primary-600 text-white text-xs font-bold rounded-xl transition-colors shadow-lg shadow-primary-500/10"
+                >
+                  Upgrade to Pro ($9.99/mo)
+                </Link>
+
+                <button
+                  onClick={() => setShowUpgradeModal(false)}
+                  className="w-full text-center py-2 text-[10px] text-slate-400 hover:text-slate-600 transition-colors"
+                >
+                  Close & return
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
 
     </div>

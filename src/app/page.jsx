@@ -16,7 +16,7 @@ function Home() {
   const scrollCarousel = (id, direction) => {
     const container = document.getElementById(id);
     if (container) {
-      const scrollAmount = direction === 'left' ? -340 : 340;
+      const scrollAmount = direction === 'left' ? -260 : 260;
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
@@ -511,15 +511,15 @@ function Home() {
                     <Link
                       key={tool.name}
                       href={tool.path}
-                      className="group relative flex flex-col justify-between p-5 rounded-xl border border-slate-200 bg-white hover:border-primary-400 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 hover:-translate-y-1 shadow-sm shrink-0 w-[280px] md:w-[320px] snap-start"
+                      className="group relative flex flex-col justify-between p-4 rounded-xl border border-slate-200 bg-white hover:border-primary-400 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 hover:-translate-y-1 shadow-sm shrink-0 w-[220px] md:w-[240px] h-[165px] snap-start"
                     >
                       <div>
                         <div className="flex items-start justify-between">
-                          <div className={`p-2.5 rounded-lg bg-gradient-to-tr ${tool.color} text-white shadow-lg`}>
-                            <IconComponent className="h-5 w-5" />
+                          <div className={`p-1.5 rounded-lg bg-gradient-to-tr ${tool.color} text-white shadow-md`}>
+                            <IconComponent className="h-3.5 w-3.5" />
                           </div>
                           {tool.badge && (
-                            <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
+                            <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
                               tool.badge === 'Security' 
                                 ? 'bg-rose-50 text-rose-700 border border-rose-150' 
                                 : 'bg-primary-50 text-primary-750 border border-primary-100'
@@ -529,16 +529,16 @@ function Home() {
                           )}
                         </div>
 
-                        <h3 className="font-display font-bold text-base text-slate-900 mt-4 group-hover:text-primary-600 transition-colors">
+                        <h3 className="font-display font-extrabold text-sm text-slate-900 mt-3 group-hover:text-primary-600 transition-colors">
                           {tool.name}
                         </h3>
                         
-                        <p className="text-xs text-slate-600 mt-2 leading-relaxed line-clamp-2">
+                        <p className="text-[11px] text-slate-600 mt-1.5 leading-relaxed line-clamp-2">
                           {tool.description}
                         </p>
                       </div>
 
-                      <div className="mt-5 flex items-center text-xs font-bold text-primary-600 group-hover:text-primary-700 group-hover:translate-x-1.5 transition-all duration-300">
+                      <div className="mt-4 flex items-center text-[11px] font-bold text-primary-600 group-hover:text-primary-700 group-hover:translate-x-1 transition-all duration-300">
                         <span>Open Tool</span>
                         <span className="ml-1">&rarr;</span>
                       </div>

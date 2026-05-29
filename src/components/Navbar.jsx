@@ -3,9 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown, Cpu, FileText, ArrowRightLeft, FileSliders, LayoutGrid } from 'lucide-react';
+import { useSession, signOut } from 'next-auth/react';
+import { Menu, X, ChevronDown, Cpu, FileText, ArrowRightLeft, FileSliders, LayoutGrid, LogOut, User } from 'lucide-react';
 
 function Navbar() {
+  const { data: session, status } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const pathname = usePathname();
@@ -146,9 +148,6 @@ function Navbar() {
               { name: 'Protect', path: '/protect-pdf' },
               { name: 'Unlock', path: '/unlock-pdf' },
               { name: 'Compress', path: '/compress-pdf' },
-              { name: 'Rotate', path: '/rotate-pdf' },
-              { name: 'Redact', path: '/redact-pdf' },
-              { name: 'Flatten', path: '/flatten-pdf' },
             ].map((link) => (
               <Link
                 key={link.path}
@@ -165,13 +164,53 @@ function Navbar() {
 
 
 
-            {/* CTA */}
-            <Link 
-              href="/merge-pdf"
-              className="px-3.5 py-2 rounded-lg text-xs xl:text-sm font-bold text-white bg-primary-500 hover:bg-primary-600 transition-colors shadow-md shadow-primary-500/15 shrink-0"
+            {/* Pricing */}
+            <Link
+              href="/pricing"
+              className={`px-2.5 py-2 text-xs xl:text-sm font-semibold rounded-lg transition-colors ${
+                pathname === '/pricing' 
+                  ? 'text-primary-600 bg-slate-100/80 shadow-sm' 
+                  : 'text-slate-650 hover:text-slate-950 hover:bg-slate-50'
+              }`}
             >
-              Get Started
+              Pricing
             </Link>
+
+            {/* Auth Buttons */}
+            {status === 'loading' ? (
+              <div className="w-10 h-10 rounded-full bg-slate-100 animate-pulse shrink-0"></div>
+            ) : session ? (
+              <div className="flex items-center space-x-2 xl:space-x-3 shrink-0">
+                <Link
+                  href="/dashboard"
+                  className="px-3.5 py-2 rounded-lg text-xs xl:text-sm font-bold text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all shrink-0"
+                >
+                  Dashboard
+                </Link>
+                <button
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className="p-2 rounded-lg text-slate-500 hover:text-rose-600 hover:bg-rose-50 transition-colors"
+                  title="Sign Out"
+                >
+                  <LogOut className="h-4.5 w-4.5" />
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center space-x-2 shrink-0">
+                <Link
+                  href="/login"
+                  className="px-3 py-2 text-xs xl:text-sm font-bold text-slate-700 hover:text-slate-900 transition-colors"
+                >
+                  Sign In
+                </Link>
+                <Link 
+                  href="/signup"
+                  className="px-3.5 py-2 rounded-lg text-xs xl:text-sm font-bold text-white bg-primary-500 hover:bg-primary-600 transition-colors shadow-md shadow-primary-500/15 shrink-0"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Hamburger Mobile Menu */}
@@ -232,9 +271,6 @@ function Navbar() {
               { name: 'Protect PDF', path: '/protect-pdf' },
               { name: 'Unlock PDF', path: '/unlock-pdf' },
               { name: 'Compress PDF', path: '/compress-pdf' },
-              { name: 'Rotate PDF', path: '/rotate-pdf' },
-              { name: 'Redact PDF', path: '/redact-pdf' },
-              { name: 'Flatten PDF', path: '/flatten-pdf' },
             ].map((link) => (
               <Link
                 key={link.path}
@@ -282,12 +318,48 @@ function Navbar() {
 
 
           
-          <Link 
-            href="/merge-pdf"
-            className="block text-center w-full px-4 py-2.5 mt-3 rounded-xl font-bold text-sm text-white bg-primary-500 hover:bg-primary-600 transition-colors shadow-md shadow-primary-500/15"
-          >
-            Get Started Free
-          </Link>
+          <div className="pt-2 border-t border-slate-100 space-y-2">
+            <Link
+              href="/pricing"
+              className="block w-full py-2 px-3 text-xs font-bold text-slate-650 hover:text-slate-900 rounded-xl"
+            >
+              Pricing Plans
+            </Link>
+            
+            {status === 'loading' ? (
+              <div className="h-10 w-full bg-slate-50 rounded-xl animate-pulse"></div>
+            ) : session ? (
+              <div className="space-y-2 pt-1">
+                <Link
+                  href="/dashboard"
+                  className="block text-center w-full px-4 py-2.5 bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 text-sm font-bold rounded-xl"
+                >
+                  Go to Dashboard
+                </Link>
+                <button
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className="block text-center w-full px-4 py-2.5 bg-rose-50 hover:bg-rose-100 text-rose-600 text-sm font-bold rounded-xl transition-colors"
+                >
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <Link
+                  href="/login"
+                  className="block text-center py-2.5 px-4 bg-slate-50 border border-slate-200 text-slate-700 font-bold text-xs rounded-xl"
+                >
+                  Sign In
+                </Link>
+                <Link 
+                  href="/signup"
+                  className="block text-center py-2.5 px-4 bg-primary-500 text-white font-bold text-xs rounded-xl shadow-md"
+                >
+                  Sign Up Free
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </nav>
