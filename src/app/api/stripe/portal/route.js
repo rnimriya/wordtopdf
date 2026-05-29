@@ -4,6 +4,8 @@ import { authOptions } from '../../../../utils/authOptions.js';
 import { stripe } from '../../../../utils/stripe.js';
 import { prisma } from '../../../../utils/db.js';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req) {
   try {
     const session = await getServerSession(authOptions);

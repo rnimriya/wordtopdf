@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
 import { stripe } from '../../../../utils/stripe.js';
 import { prisma } from '../../../../utils/db.js';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req) {
   const body = await req.text();
   const signature = headers().get('stripe-signature') || '';
